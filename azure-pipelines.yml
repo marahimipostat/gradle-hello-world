@@ -36,7 +36,8 @@ steps:
     inputs:
       targetType: 'inline'
       script: |
-        ${env:myVarVar}
+        $Env:myVarVar = 'Salama'
+        Write-Host  "${env:myVarVar}"
         Write-Host "$(myVarVar)"
         Write-Host "${env}"
 
