@@ -11,7 +11,7 @@ pool:
   vmImage: ubuntu-latest
 
 variables:
-  myVarVar: "$(Build.BuildNumber)_$(Build.DefinitionName)"
+  myVarVar: "$(Build.BuildNumber)"
 
 steps:
   - task: Gradle@2
@@ -38,5 +38,6 @@ steps:
       script: |
         ${env:myVarVar}
         Write-Host "$(myVarVar)"
+        Write-Host "${env}"
 
 
