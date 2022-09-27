@@ -38,7 +38,7 @@ steps:
       script: |
         $Env:myVarVar = 'Salama'
         Write-Host  "${env:myVarVar}"
-        Write-Host "$(myVarVar)"
-        Write-Host "${env}"
+        $Env:myVarVar = "$(myVarVar)"
+        Write-Host  "${env:myVarVar}"
 
 
