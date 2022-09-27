@@ -34,7 +34,6 @@ steps:
       targetType: 'inline'
       script: |
         Write-Host "$(Build.BuildNumber)"
-        Write-Host "$(TeamProject)"
         Write-Host "$(Build.DefinitionName)"
         Write-Host "$(SourceBranchName)"
         Write-Host "$(Date:yyyyMMdd)"
