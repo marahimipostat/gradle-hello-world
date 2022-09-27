@@ -32,5 +32,10 @@ steps:
   - task: PowerShell@2
     inputs:
       targetType: 'inline'
-      script: 'Write-Host "$(TeamProject)_$(Build.DefinitionName)_$(SourceBranchName)_$(Date:yyyyMMdd)$(Rev:.r)"'
+      script: |
+        Write-Host "$(Build.BuildNumber)"
+        Write-Host "$(TeamProject)"
+        Write-Host "$(Build.DefinitionName)"
+        Write-Host "$(SourceBranchName)"
+        Write-Host "$(Date:yyyyMMdd)"
 
