@@ -36,8 +36,7 @@ steps:
     inputs:
       targetType: 'inline'
       script: |
-        $varvar = "$(Build.BuildNumber)_$(Build.DefinitionName)"
-        Write-Host "$(Build.BuildNumber)"
-        Write-Host "$(Build.DefinitionName)"
+        ${env:myVarVar}
+        Write-Host "$(myVarVar)"
 
 
