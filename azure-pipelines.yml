@@ -10,6 +10,9 @@ trigger:
 pool:
   vmImage: ubuntu-latest
 
+variables:
+  myVarVar: "$(Build.BuildNumber)_$(Build.DefinitionName)"
+
 steps:
   - task: Gradle@2
     displayName: gradlew build
@@ -33,7 +36,8 @@ steps:
     inputs:
       targetType: 'inline'
       script: |
+        $varvar = "$(Build.BuildNumber)_$(Build.DefinitionName)"
         Write-Host "$(Build.BuildNumber)"
         Write-Host "$(Build.DefinitionName)"
-        Write-Host "$(Date:yyyyMMdd)"
+
 
