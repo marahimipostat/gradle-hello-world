@@ -9,10 +9,7 @@ trigger:
 
 pool:
   vmImage: ubuntu-latest
-
-variables:
-  myVarVar: "$(Build.BuildNumber)"
-
+  
 steps:
   - task: Gradle@2
     displayName: gradlew build
@@ -36,9 +33,7 @@ steps:
     inputs:
       targetType: 'inline'
       script: |
-        $Env:myVarVar = 'Salama'
-        Write-Host  "${env:myVarVar}"
-        $Env:myVarVar = "$(myVarVar)"
+        $Env:myVarVar = $(Build.BuildNumber)
         Write-Host  "${env:myVarVar}"
 
 
